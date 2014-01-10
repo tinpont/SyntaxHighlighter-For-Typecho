@@ -137,19 +137,19 @@ class SyntaxHighlighter_Plugin implements Typecho_Plugin_Interface {
             if (typeof(SyntaxHighlighter) !== undefined) {
                 var preList = document.getElementsByTagName('pre');
                 for (var i = 0; i < preList.length; i ++) {
-                    var firstNode = preList[i].firstChild;
-                    if (firstNode && firstNode.tagName.toLowerCase() === 'code') {
+                    var children = preList[i].getElementsByTagName('code');
+                    if (children.length > 0) {
                         var language = 'plain';
-                        if (firstNode.className !== undefined) {
-                            var match = XRegExp.exec(firstNode.className, XRegExp('^lang-(?<language>.*)$'));
+                        var code = children[0], className = code.className;
+                        if (!!className) {
+                            var match = XRegExp.exec(className, XRegExp('^lang-(?<language>.*)$'));
                             if (match && match.language) {
                                 language = match.language;
                             }
                         }
                         preList[i].className = 'brush: ' + language;
-                        preList[i].innerHTML = firstNode.innerHTML;
+                        preList[i].innerHTML = code.innerHTML;
                     }
-
                 }
                 SyntaxHighlighter.autoloader(
                         'applescript           {$currentPath}scripts/shBrushAppleScript.js',
