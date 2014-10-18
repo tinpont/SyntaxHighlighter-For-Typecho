@@ -142,7 +142,7 @@ class SyntaxHighlighter_Plugin implements Typecho_Plugin_Interface {
                         var language = 'plain';
                         var code = children[0], className = code.className;
                         if (!!className) {
-                            var match = XRegExp.exec(className, XRegExp('^lang-(?<language>.*)$'));
+                            var match = XRegExp.exec(className, XRegExp('^(lang|language)-(?<language>.*)$'));
                             if (match && match.language) {
                                 language = match.language;
                             }

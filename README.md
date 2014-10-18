@@ -1,13 +1,15 @@
 SyntaxHighlighter-For-Typecho
 =============================
 
-著名代码高亮插件[SyntaxHighlighter][2] Typecho移植版，同时支持0.8、0.9
+著名代码高亮插件[SyntaxHighlighter][2] Typecho移植版，同时支持0.8、0.9、1.0
 
 本插件基于[Tolbkni Kao][1]的Syntax Highlighter for Typecho 0.8修改
 
 typecho 0.9新版发布了，就冲这个Markdown也要体验一下。就是因为这个Markdown，以前用的代码高亮插件失效了，同时原作者已经不再使用typecho了，所以只好花一点时间，修改一下原作者的插件。说是修改，其实已经改了大部分内容了。
 
-typecho 0.9使用方法：
+### 插件目录请命名为 SyntaxHighlighter
+
+typecho 0.9以上版本使用方法：
 
     ```cpp
     这里填写你的C++代码
